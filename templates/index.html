@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+body {
+        background: url("static/img/20140805-155737-g.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: up;
+    }
+p {
+	font-family:quadranta, sans-serif;
+	font-size: 1.2em;
+}
+
+.arrondie2 {
+	background-color:#E4EFFF;
+	border:1px solid #9FC6FF;
+	padding:20px;
+	padding-left:5px;
+	border-radius:10px;
+}
+img {
+    max-width: 300px;
+    max-height: 200px;
+}
+</style>
+
+  <div class="arrondie2">
+	<center><ul>
+		<p> Bienvenue sur la page d'accueil du projet APB, le prédécesseur de l'actuel Parcours-sup. La rubrique recherche dans le menu en haut permet de filtrer les différentes données que nous avons dans le dataset. </p>
+		<p> On peut alors exploiter les résultats pour analyser les différentes données selon des critères spécifiques, ou même se servir de ses données pour comparer l'ancien système au système en place.</p>
+    </ul></center>
+
+  </div>
+  </br>
+  </br>
+<center><img src="{{ url_for('static', filename='img/1370609747828.jpg')}}"></center>
+<br/>
+</br>
+  <div class="arrondie2">
+	<center><ul>
+		<p> Le menu "à propos" fera l'objet d'un résumé de ce projet ainsi qu'un aperçu du dataset. N'hésitez pas à y jeter un coup d'oeil. </p>
+    </ul></center>
+  </div>
+{% endblock %}
+
+
+
+
+
+

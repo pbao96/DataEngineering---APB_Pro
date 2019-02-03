@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+p {
+	font-family:quadranta, sans-serif;
+	font-size: 1.2em;
+}
+table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  font-size: 1.0em;
+}
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+</style>
+  <div class="about">
+     <center><br/>
+	 <p>Nous avons réalisé ce projet dans le cadre de l'unité <u>DSIA-4203C - Data Engineering</u>. Le dataset d'APB regroupe des données réparties dans différentes colonnes.</p>
+	 <p>Au cours de ce projet, nous avons commencé par la recherche d'un dataset à la fois intéréssant à réaliser, exploitable et compréhensible. Le choix d'un jeu de donnée 
+	 sur les affectations APB est particulièrement intéréssant dans la mesure où il s'agit d'une plateforme que nous avons nous même expérimentée et qui ne nous était donc pas
+	 inconnue.</p>
+	 <img src="{{ url_for('static', filename='img/微信图片_20190203194242.jpg')}}"><br/><br/><br/>
+	 <p> Le but du projet est tout d'abord de recueillir des données et de les stocker dans une base de données NoSQL type MongoDB. Pour ce faire, il est nécessaire d'installer l'application
+	 de la base de donnée, déjà pour accéder à MongoDB, puis ensuite voir la forme du dataset mais aussi pour voir si le stockage a bien été fait. Ci dessous un comparatif entre une base 
+	 de données SQL et une NoSQL, au niveau du vocabulaire utilisé.<br/><i>(Source: mongodb.com)</i><p><br/>
+	 <img src="{{ url_for('static', filename='img/BDD1.jpg')}}">
+	 <br/><br/>
+	 <p> Ensuite, bien qu'ayant eu une introduction au framework Flask, il a fallu réaliser une interface Web liée à la base de données et permettant de l'interroger. L'appréhension était plus compliquée que prévue.
+	 Ce projet est ainsi un premier jet de ce que l'on peut réaliser en data engineering. Il représente un potentiel de développement non négligeable. En effet, on peut continuer sur le recueil de donnée par scraping, croiser
+	 les différentes données du dataset afin de mieux préciser les demandes ou même comparer des données de deux datasets différents.<p>
+	</center>
+</div>
+<br/>
+ <h1>{{name}}</h1>
+  {{data | safe}}
+ {% endblock %}

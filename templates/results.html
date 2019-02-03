@@ -1,0 +1,47 @@
+{% extends "search.html" %}
+
+{% block content %}
+<div class="search">
+  <br/>
+	 	<p>Bienvenue sur la section recherche de notre projet APB !</p>
+	</br>
+
+	<div class="container">
+		<form action="/search/results" method="post">
+			<div class="input-group">
+				<input type="text" class="form-control input-lg" name="input" placeholder="Search" autofocus>
+					<div class="input-group-btn">
+						<button class="btn btn-info btn-lg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+					</div>
+			</div>
+			<br>
+					<select id="select_cat" name="select_cat">
+							<option value="Libellé de l'établissement d'accueil">Nom d'établissement</option>
+							<option value="Code UAI de l'établissement d'accueil">Code d'établissement</option>
+							<option value="Départements">Nom du département</option>
+							<option value="Code département">Code du département</option>
+							<option value="Académies">Académie</option>
+							<option value="Session">Session</option>
+					</select>
+					<input type="number" name="limit" placeholder="Number of results" min="1" max=l>
+				</form>
+		</div>
+</div>
+      
+  <div class="results">
+     <br/>
+	{% for doc in res %}
+        <tbody>
+        <tr>           
+            {{ doc }}
+            <br>
+            <br>  
+        </tr>
+        </tbody>
+    {% endfor %}
+   </div>
+  
+ {% endblock %}
+
+</body>
+</html>

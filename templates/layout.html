@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	{% block head %}
+    <title>{% block title %}APB_Project{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	{% endblock %}
+  </head>
+  
+
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">DSIA4203C: Data Engineering</h1><br/>
+<nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">APB_Project</a>
+          </div>
+          <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="{% if active=='index' %}active{%endif %}"><a href="{{ url_for('index') }}">Accueil</a></li>
+              <li class="{% if active=='search' %}active{%endif %}"><a href="{{ url_for('search') }}">Recherche</a></li>
+              <li class="{% if active=='about' %}active{%endif %}"><a href="{{ url_for('about') }}">À propos</a></li></span>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+<style>
+footer{
+	position: fixed;
+	width: 100%;
+	background: bisque;
+	bottom: 0;
+	font-weight:bold;
+	height: 50px
+}
+</style>
+<footer>
+         <br>
+         <p class="text-center small"> Patrick BAO & Chams Hamani - Data Engineering Project Using Flask and MongoDB | ESIEE Paris 2019</p>
+      </footer>
+
+
+
+  </body>
+</html>
